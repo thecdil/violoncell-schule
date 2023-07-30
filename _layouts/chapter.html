@@ -2,7 +2,7 @@
 layout: page 
 ---
 
-<div class="h3 text-center">{{ page.article_name }}.</div>
+{% if page.article_name %}<div class="h3 text-center">{{ page.article_name }}.</div>{% endif %}
 <h1>{{ page.title }}</h1>
 
 {{ content }}
