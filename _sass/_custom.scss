@@ -3,3 +3,9 @@
     This allows you to override any CollectionBuilder or Bootstrap CSS without modifying the base theme files directly.
 */
 h1, h2, h3 { text-align: center; }
+
+.footnotes { 
+    border-top: 1px solid #cdcdcd; 
+    margin-top: 2rem;
+    padding-top: 2rem;
+}
