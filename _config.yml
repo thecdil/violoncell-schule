@@ -1,0 +1,41 @@
+
+##########
+# URL VARIABLES
+#
+# site domain, full URL to the production location of your collection
+url: 
+# path to location on the domain if necessary e.g. /digital/hjccc
+baseurl: 
+# location of code, the full url to your github repository
+source-code: https://github.com/thecdil/violoncell-schule
+
+##########
+# SITE SETTINGS
+#
+# title of site appears in banner
+title: School of Cello Playing (Violoncell-Schule)
+text-author: Carl Davidoff
+text-date: 1888
+text-translator: Miranda Wilson
+text-translation-date: 2022
+site-date: 2023
+# description appears in meta tags and other locations
+# this description might appear in search result lists, keep around 160 characters max
+description: "Open access english translation of Davidoff's influential Violoncell-Schule"
+# keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
+keywords: cello; historically-informed string pedagogy
+
+
+# set defaults
+defaults:
+  - scope:
+      path: "text/*"
+    values:
+      layout: "page"
+
+# ignore stuff
+exclude: [docs/, README.md]
+
+# compress CSS output
+sass:
+  style: compressed
