@@ -8,6 +8,6 @@
 - image processing --> Staatsbibliothek images, processed via ScanTailor advanced
 - fonts: 
     - Libre Bodoni (seemed to match), https://fonts.google.com/specimen/Libre+Bodoni
-    - in images: C059 / Century Schoolbook bold (available in gimp for photo editing)
+    - in images: C059 / Century Schoolbook bold at 72px (available in gimp for photo editing)
 
 - align captions with flexbox, https://publishing-project.rivendellweb.net/using-figures-and-flex-box-to-align-captions/
