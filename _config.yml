@@ -31,7 +31,7 @@ defaults:
   - scope:
       path: "text/*"
     values:
-      layout: "page"
+      layout: "chapter"
 
 # ignore stuff
 exclude: [docs/, README.md]
