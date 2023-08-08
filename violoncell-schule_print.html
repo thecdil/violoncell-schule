@@ -1,0 +1,63 @@
+---
+# generate full text edition with Paged.js for printing
+title: School of Cello Playing (Violoncell-Schule) by Carl Davidoff 
+---
+<!doctype html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    {% include head/head.html %}
+
+    <link rel="stylesheet" href="{{ '/assets/lib/paged.interface.css' | relative_url }}" type="text/css">
+    <script src="{{ '/assets/lib/paged.polyfill.min.js' | relative_url }}"></script>
+
+    <style>
+        @page {
+            size: letter;
+        }
+        /* set page numbers at first chapter */
+        #s1_a01 { counter-reset: page 1; }
+        /* set up page breaks */
+        .frontmatter-pages {
+            break-before: page;
+        }
+        .chapter-pages {
+            page: chapter;
+            break-before: page;
+            margin-top: 8em; 
+        }
+
+    </style>
+
+  </head>
+  <body>
+    {%- assign front_matter = site.html_pages | where_exp: "f", "f.front_matter" -%}
+    {%- assign chapters = site.html_pages | where_exp: "c", "c.section_number" %}
+    {%- assign replace_link = '/text/' | absolute_url -%}
+
+    {% for f in front_matter %}
+    <section class="frontmatter-pages">
+      {% if f.layout == 'chapter' %}<h2 class="chapter" id="{{ f.name | replace: '.md', '' }}">{{ f.title }}</h2>{% endif %}
+      {{ f.content | replace: replace_link,"#" | replace: ".html","" }}
+    </section>
+
+    {% endfor %}
+
+    {% for c in chapters %}
+    <section class="chapter-pages">
+    {% if c.section_title %}<h1 class="section-title display-4 mb-5">{{ c.section_title }}</h1>{% endif %}
+
+    {% if c.article_name %}<div class="h3 text-center">{{ c.article_name }}.</div>{% endif %}
+    <h2 class="chapter" id="{{ c.name | replace: '.md', '' }}">{{ c.title }}</h2>
+    
+    {{ c.content }} 
+    
+    </section>
+    {% endfor %}
+    
+    <!-- Bootstrap bundle JS -->
+    <script src="{{ '/assets/lib/bootstrap.bundle.min.js' | relative_url }}"></script>
+    <!-- load other js -->
+    <script src="{{ '/assets/lib/lazysizes.min.js' | relative_url }}" async></script>
+
+  </body>
+</html>
