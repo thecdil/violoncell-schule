@@ -1,6 +1,6 @@
 ---
 title: Introduction
-front_matter: 1
+front_matter: 2
 ---
 
 The cellist, composer, and pedagogue Carl Davidoff (1838-1889) was born in Latvia and educated in Moscow. His main teacher was Carl Schuberth (1811-1863), a onetime student of the celebrated Johann Justus Friedrich Dotzauer (1783-1860). Davidoff was therefore a descendant of the Dresden school of cello pedagogy as well as the founder of a Russian school that continues to the present day.  

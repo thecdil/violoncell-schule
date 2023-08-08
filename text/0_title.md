@@ -1,6 +1,7 @@
 ---
 title: School of Cello Playing (Violoncell-Schule) by Carl Davidoff 
 front_matter: 0
+layout: page
 ---
 
 School of Cello Playing (Violoncell-Schule) by Carl Davidoff 

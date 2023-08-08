@@ -1,0 +1,29 @@
+---
+title: Contents
+front_matter: 1
+layout: page
+---
+
+<h1>{{ page.title }}</h1>
+
+<ul class="toc-list">
+    {%- assign front-matter = site.html_pages | where: "layout", "chapter" | where_exp: "c", "c.front_matter" %}
+    {% for f in front-matter %}
+    <li><a href="{{ f.url | absolute_url }}">{{ f.title }}</a></li>
+    {% endfor %}
+
+    {%- assign chapters = site.html_pages | where: "layout", "chapter" | where_exp: "c", "c.section_number" %}
+    {% assign sections = chapters | map: 'section_number' | uniq %}
+    {% for s in sections %}
+    {% assign articles = chapters | where: "section_number", s %}
+    {% assign section_title = articles | map: 'section_title' | uniq | first %} 
+    <li>{{ section_title }} 
+        <ul>
+            {% for a in articles %}
+            <li><a href="{{ a.url | absolute_url }}">{{ a.article_name }}: {{ a.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+
+</ul>
