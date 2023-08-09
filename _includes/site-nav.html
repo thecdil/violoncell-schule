@@ -24,12 +24,12 @@
                     </li>
                     {%- endfor -%}
 
-                    {%- assign front-matter = site.html_pages | where: "layout", "chapter" | where_exp: "c", "c.front_matter" %}
+                    {%- assign front-matter = site.text | where: "layout", "chapter" | where_exp: "c", "c.front_matter" %}
                     {% for f in front-matter %}
                     <li class="nav-item"><a class="nav-link{% if page.url == f.url %} active{% endif %}" href="{{ f.url | absolute_url }}">{{ f.title }}</a></li>
                     {% endfor %}
                 
-                    {%- assign chapters = site.html_pages | where: "layout", "chapter" | where_exp: "c", "c.section_number" %}
+                    {%- assign chapters = site.text | where: "layout", "chapter" | where_exp: "c", "c.section_number" %}
                     {% assign sections = chapters | map: 'section_number' | uniq %}
                     {% for s in sections %}
                     {% assign articles = chapters | where: "section_number", s %}

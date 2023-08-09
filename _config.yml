@@ -25,11 +25,15 @@ description: "Open access English translation of Davidoff's influential Violonce
 # keywords, a short list of subjects describing the collection, separated by semicolon, to appear in rich markup
 keywords: cello; historically-informed string pedagogy
 
+# text collection
+collections:
+  text:
+    output: true
 
 # set defaults
 defaults:
   - scope:
-      path: "text/*"
+      path: "_text/*"
     values:
       layout: "chapter"
 
