@@ -9,7 +9,19 @@
 // chapter text
 .container { max-width: 58rem; }
 .chapter-content { 
-    h1, h2, h3 { text-align: center; }
+    h1, h2, h3 { 
+        text-align: center; 
+    }
+    .section-title { 
+        font-size: 3.5rem;
+        margin-bottom: 3rem;
+    }
+    .article-title { 
+        text-align: center;
+        font-size: 1.75rem;
+    }
+    .chapter-title { } 
+
 }
 .footnotes { 
     border-top: 1px solid #cdcdcd; 

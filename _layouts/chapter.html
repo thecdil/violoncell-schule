@@ -3,9 +3,9 @@ layout: page
 ---
 <div class="chapter-content">
     
-    {% if page.section_title %}<h1 class="section-title display-4 mb-5">{{ page.section_title }}</h1>{% endif %}
-    {% if page.article_name %}<div class="h3 text-center">{{ page.article_name }}.</div>{% endif %}
-    <h1>{{ page.title }}</h1>
+    {% if page.section_title %}<h1 class="section-title">{{ page.section_title }}</h1>{% endif %}
+    {% if page.article_name %}<div class="article-title h3">{{ page.article_name }}.</div>{% endif %}
+    <h1 class="chapter-title">{{ page.title }}</h1>
 
     {{ content }}
 
