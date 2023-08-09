@@ -11,6 +11,9 @@ title: School of Cello Playing (Violoncell-Schule) by Carl Davidoff
     <script src="{{ '/assets/lib/paged.polyfill.min.js' | relative_url }}"></script>
 
     <style>
+        /* hide stuff */
+        .next-buttons { display: none; }
+
         @page {
             size: letter;
         }
@@ -30,8 +33,8 @@ title: School of Cello Playing (Violoncell-Schule) by Carl Davidoff
 
   </head>
   <body>
-    {%- assign front_matter = site.html_pages | where_exp: "f", "f.front_matter" -%}
-    {%- assign chapters = site.html_pages | where_exp: "c", "c.section_number" %}
+    {%- assign front_matter = site.text | where_exp: "f", "f.front_matter" -%}
+    {%- assign chapters = site.text | where_exp: "c", "c.section_number" %}
     {%- assign replace_link = '/text/' | absolute_url -%}
 
     {% for f in front_matter %}
