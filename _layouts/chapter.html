@@ -1,8 +1,12 @@
 ---
 layout: page 
 ---
-{% if page.section_title %}<h1 class="section-title display-4 mb-5">{{ page.section_title }}</h1>{% endif %}
-{% if page.article_name %}<div class="h3 text-center">{{ page.article_name }}.</div>{% endif %}
-<h1>{{ page.title }}</h1>
+<div class="chapter-content">
+    
+    {% if page.section_title %}<h1 class="section-title display-4 mb-5">{{ page.section_title }}</h1>{% endif %}
+    {% if page.article_name %}<div class="h3 text-center">{{ page.article_name }}.</div>{% endif %}
+    <h1>{{ page.title }}</h1>
 
-{{ content }}
+    {{ content }}
+
+</div>
