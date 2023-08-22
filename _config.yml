@@ -37,6 +37,13 @@ defaults:
     values:
       layout: "chapter"
 
+
+##########
+# ROBOTS EXCLUDE
+#
+# set noindex to true if you do NOT want Google to index your site
+noindex: true 
+
 # ignore stuff
 exclude: [docs/, README.md]
 
