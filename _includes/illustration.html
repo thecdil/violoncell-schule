@@ -11,6 +11,7 @@
     Options: 
     - "img" = filename of item in "illustrations/" folder
     - "alt" = alternative text describing the image. This is a required accessibility feature 
+    - "heading-top"
     - "caption-top", "caption-bottom", "caption-left", "caption-right"
     - "fig-class"
     - "img-style"
@@ -18,8 +19,16 @@
 {%- endcomment -%}
 <div class="text-center">
     <figure class="figure mx-3{% if include.fig-class %} {{ include.fig-class }}{% endif %}">
-        {% if include.caption-top %}<figcaption class="fs-3 text-start">{{ include.caption-top }}</figcaption>{% endif %}
+        {% if include.caption-top or include.heading-top %}<figcaption class="text-start">{% if include.heading-top %}<span class="fs-3">{{ include.heading-top }}</span> {% endif %}{{ include.caption-top }}</figcaption>{% endif %}
+        {% if include.caption-left or include.caption-right %}
+        <div class="row align-items-center">
+            {% if include.caption-left %}<div class="col text-end"><figcaption>{{ include.caption-left }}</figcaption></div>{% endif %}
+            <div class="col"><img class="figure-img img-fluid lazyload" alt="{{ include.alt | default: 'musical notation' | escape }}"  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{{ '/illustrations/' | relative_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}></div>
+            {% if include.caption-right %}<div class="col text-start"><figcaption>{{ include.caption-right }}</figcaption></div>{% endif %}
+        </div>
+        {% else %}
         <img class="figure-img img-fluid lazyload" alt="{{ include.alt | default: 'musical notation' | escape }}"  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{{ '/illustrations/' | relative_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}>
-        {% if include.caption-bottom %}<figcaption class="fs-3 text-center">{{ include.caption-bottom }}</figcaption>{% endif %}
+        {% endif %}
+        {% if include.caption-bottom %}<figcaption class="text-start">{{ include.caption-bottom }}</figcaption>{% endif %}
     </figure>
 </div>
