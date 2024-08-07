@@ -23,11 +23,11 @@
         {% if include.caption-left or include.caption-right %}
         <div class="row align-items-center">
             {% if include.caption-left %}<div class="col text-end"><figcaption>{{ include.caption-left }}</figcaption></div>{% endif %}
-            <div class="col"><img class="figure-img img-fluid lazyload" alt="{{ include.alt | default: 'musical notation' | escape }}"  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{{ '/illustrations/' | relative_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}></div>
+            <div class="col"><img class="figure-img img-fluid" alt="{{ include.alt | default: 'musical notation' | escape }}"  src="{{ '/illustrations/' | absolute_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}></div>
             {% if include.caption-right %}<div class="col text-start"><figcaption>{{ include.caption-right }}</figcaption></div>{% endif %}
         </div>
         {% else %}
-        <img class="figure-img img-fluid lazyload" alt="{{ include.alt | default: 'musical notation' | escape }}"  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{{ '/illustrations/' | relative_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}>
+        <img class="figure-img img-fluid" alt="{{ include.alt | default: 'musical notation' | escape }}" src="{{ '/illustrations/' | absolute_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}>
         {% endif %}
         {% if include.caption-bottom %}<figcaption class="text-start">{{ include.caption-bottom }}</figcaption>{% endif %}
     </figure>

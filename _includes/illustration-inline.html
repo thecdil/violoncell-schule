@@ -1,1 +1,1 @@
-<img class="d-inline illustration-inline {% if include.fig-class %} {{ include.fig-class }}{% endif %}" alt="{{ include.alt | default: 'musical notation' }}" src="{{ '/illustrations/' | relative_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}>
+<img class="d-inline illustration-inline {% if include.fig-class %} {{ include.fig-class }}{% endif %}" alt="{{ include.alt | default: 'musical notation' }}" src="{{ '/illustrations/' | absolute_url }}{{ include.img }}" {% if include.img-style %}style="{{ include.img-style }}"{% endif %}>

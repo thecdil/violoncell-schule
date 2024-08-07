@@ -3,7 +3,7 @@ title: "Carl Davidoff's Legacy: The Russian School of Cello Pedagogy"
 front_matter: 4
 ---
 
-<img src="{{ '/illustrations/davidoff-legacy-diagram.svg' | relative_url }}" class="img-fluid" alt="flow diagram showing Davidoff's legacy of students">
+<img src="{{ '/illustrations/davidoff-legacy-diagram.svg' | absolute_url }}" class="img-fluid" alt="flow diagram showing Davidoff's legacy of students">
 <div class="visually-hidden" markdown="1"> 
 
 List of Davidoff's students: 
